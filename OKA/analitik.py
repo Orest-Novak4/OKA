@@ -12,7 +12,7 @@ def main():
 
     avg_price = np.mean(df["price_per_unit"])
     median_quantity = np.median(df["quantity"])
-    std_price = np.std(df["price_per_unit"], ddof=1)  # sample std
+    std_price = np.std(df["price_per_unit"], ddof=1)  
 
     df["total_price"] = df["quantity"] * df["price_per_unit"]
     supplier_profit = df.groupby("supplier")["total_price"].sum()
@@ -55,3 +55,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
