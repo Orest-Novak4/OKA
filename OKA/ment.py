@@ -3,11 +3,11 @@ import threading
 import json
 from datetime import datetime
 
-HOST = '127.0.0.1'  # або твоя локальна IP: 192.168...
+HOST = '127.0.0.1'  
 PORT = 55555
 
-clients = {}           # {client_socket: {"name": "shaman", "addr": (...)}}
-positions = {}         # {"shaman": (52.1, 24.5), "supplier": (52.3, 24.7)}
+clients = {}
+positions = {}        
 lock = threading.Lock()
 
 def broadcast(message, exclude=None):
@@ -116,3 +116,4 @@ def start_server():
 
 if __name__ == "__main__":
     start_server()
+
