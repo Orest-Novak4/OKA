@@ -6,13 +6,13 @@ def shadow(limit=200):
 
                 parts = event.split()
                 if len(parts) != 2:
-                    print(f"⚠️ Некоректна транзакція: '{event}' — ігнорую")
+                    print(f" Некоректна транзакція: '{event}' — ігнорую")
                     continue
 
                 action, value = parts[0], parts[1]
 
                 if action not in ("payment", "refund", "transfer"):
-                    print(f"⚠️ Незнайома операція: '{event}' — ігнорую")
+                    print(f" Незнайома операція: '{event}' — ігнорую")
                     continue
 
                 try:
@@ -49,4 +49,5 @@ try:
     while True:
         next(gen)
 except StopIteration as e:
+
     print(f"\nФінальна сума операцій: {e.value}")
